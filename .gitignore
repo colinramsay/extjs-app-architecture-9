@@ -1,0 +1,5 @@
+ext/
+node_modules
+build/
+*.log
+*.db
