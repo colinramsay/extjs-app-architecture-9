@@ -1,6 +1,6 @@
 Ext.define('Alcohology.view.header.Header', {
     extend: 'Ext.Container',
-    xtype: 'header',
+    xtype: 'app-header',
     layout: 'vbox',
     bodyCls: 'header-body',
     items: [

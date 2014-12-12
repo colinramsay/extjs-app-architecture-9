@@ -3,7 +3,7 @@ Ext.define('Alcohology.Application', {
     
     name: 'Alcohology',
 
-    stores: [],
+    stores: ['Alcohology.model.Product', 'Alcohology.model.Category'],
     
     launch: function () {
     

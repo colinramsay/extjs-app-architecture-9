@@ -1,0 +1,22 @@
+{
+  "name": "alcohology",
+  "version": "1.0.0",
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/colinramsay/extjs-app-architecture-9"
+  },
+  "description": "Tablet Shopping App",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run server & npm run watch",
+    "server": "node server.js",
+    "watch": "sencha app watch"
+  },
+  "author": "Colin Ramsay",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.9.0",
+    "express": "^4.10.2",
+    "sqlite3": "^3.0.4"
+  }
+}

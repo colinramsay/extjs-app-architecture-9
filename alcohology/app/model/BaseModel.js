@@ -3,9 +3,10 @@ Ext.define('Alcohology.model.BaseModel', {
 
     schema: {
         namespace: 'Alcohology.model',
+        urlPrefix: 'http://localhost:3000',
         proxy: {
             type: 'rest',
-            url: 'data/{entityName:uncapitalize}.json'
+            url: '{prefix}/{entityName:uncapitalize}'
         }
     }
 });
