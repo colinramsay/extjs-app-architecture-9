@@ -35,6 +35,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+function getFilterValue(filters, property) {
+    return filters.filter(function(f) { return f.property === property; })[0].value;
+}
+
 
 app.get('/category', function(req, res) {
     db.all('SELECT * FROM Categories', function(err, data) {
@@ -45,10 +49,15 @@ app.get('/category', function(req, res) {
 app.get('/product', function(req, res) {
     var filters = JSON.parse(req.query.filter);
 
-    //if(filters.)
+    db.all('SELECT * FROM Products WHERE CategoryId = $categoryId', { $categoryId: getFilterValue(filters, 'categoryId') }, function(err, data) {
 
-    db.all('SELECT * FROM Products' + filter, params, function(err, data) {
+        res.json(data);
+    });
+});
 
+app.get('/product/:id', function(req, res) {
+    
+    db.get('SELECT * FROM Products WHERE id = $id', { $id: req.params.id }, function(err, data) {
         res.json(data);
     });
 });

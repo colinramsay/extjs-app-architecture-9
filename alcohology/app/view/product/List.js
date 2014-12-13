@@ -1,12 +1,14 @@
 Ext.define('Alcohology.view.product.List', {
     extend: 'Ext.DataView',
+    controller: 'product',
     requires: [
-        'Alcohology.view.product.ListModel'
+        'Alcohology.view.product.ProductModel',
+        'Alcohology.view.product.ProductController'
     ],
     xtype: 'product-list',
-    bodyCls: 'product-list-body',
+    cls: 'product-list',
     tpl: '<tpl for="."><div class="product">{name}</div></tpl>',
-    itemSelector: 'product',
+    itemSelector: '.product',
     bind: '{currentProducts}',
-    viewModel: 'product-list'
+    viewModel: 'product'
 });

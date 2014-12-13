@@ -1,5 +1,5 @@
 Ext.define('Alcohology.view.main.Main', {
-    extend: 'Ext.container.Container',
+    extend: 'Ext.Panel',
     requires: [
         'Alcohology.view.main.MainController',
         'Alcohology.view.main.MainModel',
@@ -12,8 +12,8 @@ Ext.define('Alcohology.view.main.Main', {
     controller: 'main',
     viewModel: 'main',
     layout: 'border',
+    header: { xtype: 'app-header' },
     items: [
-        { xtype: 'app-header', region: 'north' },
         { xtype: 'categories', width: 200, region: 'west' },
         { xtype: 'product-list', region: 'center' }
     ]

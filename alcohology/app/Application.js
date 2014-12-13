@@ -6,6 +6,6 @@ Ext.define('Alcohology.Application', {
     stores: ['Alcohology.model.Product', 'Alcohology.model.Category'],
     
     launch: function () {
-    
+        Ext.setGlyphFontFamily('FontAwesome');
     }
 });

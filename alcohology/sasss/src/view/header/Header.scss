@@ -1,0 +1,12 @@
+.x-panel-header-title-default > .x-title-text-default:after {
+	content: '';
+}
+
+.app-header {
+	.x-title-text {
+		padding: 30px 10px;
+		font-family: 'Rock Salt';
+		font-size: 50px;
+		color: $color;
+	}
+}

@@ -1,9 +1,10 @@
 Ext.define('Alcohology.view.header.Header', {
-    extend: 'Ext.Container',
+    extend: 'Ext.panel.Header',
     xtype: 'app-header',
-    layout: 'vbox',
-    bodyCls: 'header-body',
-    items: [
-        { html: 'Alcohology' }
-    ]
+    cls: 'app-header',
+    layout: 'fit',
+    title: 'Alcohology'
+    // items: [
+    //     { html: 'Alcohology', xtype: 'container', cls: 'logo' }
+    // ]
 });
