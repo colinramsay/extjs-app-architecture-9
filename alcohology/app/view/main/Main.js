@@ -7,7 +7,6 @@ Ext.define('Alcohology.view.main.Main', {
         'Alcohology.view.product.List',
         'Alcohology.view.header.Header'
     ],
-    session: true,
     xtype: 'app-main',
     controller: 'main',
     viewModel: 'main',

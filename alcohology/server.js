@@ -22,6 +22,10 @@ db.serialize(function() {
         db.run('CREATE TABLE `Products` (\
             `id`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,\
             `name`    TEXT,\
+            `price`   TEXT,\
+            `previousPrice`   TEXT,\
+            `description`   TEXT,\
+            `features`   TEXT,\
             `categoryId`  INTEGER\
         );');
     }
@@ -39,9 +43,14 @@ function getFilterValue(filters, property) {
     return filters.filter(function(f) { return f.property === property; })[0].value;
 }
 
+app.get('/category/:id', function(req, res) {
+    db.all('SELECT * FROM Categories WHERE id = $id', { $id: req.params.id }, function(err, data) {
+        res.json(data);
+    });
+});
 
 app.get('/category', function(req, res) {
-    db.all('SELECT * FROM Categories', function(err, data) {
+    db.all('SELECT id, name FROM Categories', function(err, data) {
         res.json(data);
     });
 });

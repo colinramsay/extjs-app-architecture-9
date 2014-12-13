@@ -5,6 +5,7 @@ Ext.define('Alcohology.view.product.List', {
         'Alcohology.view.product.ProductModel',
         'Alcohology.view.product.ProductController'
     ],
+    emptyText: 'No Products Found.',
     xtype: 'product-list',
     cls: 'product-list',
     tpl: '<tpl for="."><div class="product">{name}</div></tpl>',

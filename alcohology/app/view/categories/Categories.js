@@ -1,6 +1,7 @@
 Ext.define('Alcohology.view.categories.Categories', {
     extend: 'Ext.grid.Panel',
     xtype: 'categories',
+    controller: 'categories',
     viewModel: 'categories',
     bodyCls: 'categories-body',
     requires: [

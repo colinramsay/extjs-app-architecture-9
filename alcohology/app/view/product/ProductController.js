@@ -15,12 +15,14 @@ Ext.define('Alcohology.view.product.ProductController', {
     },
 
     onCategoryRoute: function(id) {
+        this.getViewModel().linkTo('currentCategory', { reference: 'Alcohology.model.Category', id: id });
         if(this.productWindow) {
             this.productWindow.close();
         }
     },
 
     onProductRoute: function(id) {
+        this.getViewModel().linkTo('currentProduct', { reference: 'Alcohology.model.Product', id: id });
         this.productWindow = Ext.create('Alcohology.view.product.Detail');
 
         this.productWindow.show();
@@ -38,6 +40,6 @@ Ext.define('Alcohology.view.product.ProductController', {
 
 
     onAddToCart: function() {
-        
+
     }
 });
