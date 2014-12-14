@@ -15,5 +15,13 @@ Ext.define('Alcohology.view.main.Main', {
     items: [
         { xtype: 'categories', width: 200, region: 'west' },
         { xtype: 'product-list', region: 'center' }
-    ]
+    ],
+
+    initComponent: function() {
+        this.callParent(arguments);
+
+        this.cart = Ext.create('Alcohology.view.cart.Cart', {
+            reference: 'cartWindow'
+        });
+    }
 });

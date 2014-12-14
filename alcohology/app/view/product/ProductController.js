@@ -3,15 +3,22 @@ Ext.define('Alcohology.view.product.ProductController', {
     alias: 'controller.product',
     listen: {
         component: {
-            'product-list': { 'itemclick': 'onProductClick' },
+            '#productListView': { 'itemclick': 'onProductClick' },
             '#close': { 'click': 'onProductClose' },
             '#addToCart': { 'click': 'onAddToCart' },
+            'combo': { 'select': 'onSortSelect' }
         }
     },
 
     routes : {
         'product/:id': 'onProductRoute',
         'category/:id': 'onCategoryRoute'
+    },
+
+    onSortSelect: function(combo, records) {
+        if(records.length > 0) {
+            
+        }
     },
 
     onCategoryRoute: function(id) {
@@ -40,6 +47,10 @@ Ext.define('Alcohology.view.product.ProductController', {
 
 
     onAddToCart: function() {
+        var product = this.getViewModel().get('currentProduct');
 
+        this.getViewModel().get('cart').addProduct(product);
+
+        Ext.toast('Product Added');
     }
 });
