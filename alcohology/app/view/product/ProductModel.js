@@ -11,10 +11,19 @@ Ext.define('Alcohology.view.product.ProductModel', {
             id: 1
         }
     },
+    data: {
+        sortProperty: 'id',
+        sortDirection: 'ASC'
+    },
     stores: {
         products: {
             type: 'products',
             remoteFilter: true,
+            remoteSort: true,
+            sorters: [{
+                property: '{sortProperty}',
+                direction: '{sortDirection}'
+            }],
             filters: [{
                 property: 'categoryId',
                 value: '{currentCategory.id}'

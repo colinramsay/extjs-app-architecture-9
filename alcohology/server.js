@@ -56,10 +56,24 @@ app.get('/category', function(req, res) {
 });
 
 app.get('/product', function(req, res) {
-    var filters = JSON.parse(req.query.filter);
+    var filters = JSON.parse(req.query.filter),
+        sort = JSON.parse(req.query.sort)[0],
+        categoryId = getFilterValue(filters, 'categoryId');
 
-    db.all('SELECT * FROM Products WHERE CategoryId = $categoryId', { $categoryId: getFilterValue(filters, 'categoryId') }, function(err, data) {
+    if(['id', 'price', 'name'].indexOf(sort.property) === -1) {
+        throw 'Invalid sort column';
+    }
 
+    var dir = sort.direction === 'ASC' ? 'ASC' : 'DESC';
+
+    var query = 'SELECT * FROM Products WHERE CategoryId = $categoryId ORDER BY ' + sort.property + ' ' + dir;
+
+    console.log(query, categoryId);
+
+    db.all(query, { $categoryId: categoryId }, function(err, data) {
+        if(err) {
+            console.log(err);
+        }
         res.json(data);
     });
 });

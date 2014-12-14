@@ -14,8 +14,10 @@ Ext.define('Alcohology.view.product.List', {
             store: Ext.create('Ext.data.Store', {
                 fields: ['text', 'field', 'direction'],
                 data : [
-                    { text: 'Date Added' },
-                    { text: 'Price ASC', field: 'price', direction: 'ASC' }
+                    { text: 'Date Added', property: 'id', direction: 'DESC' },
+                    { text: 'Name A-Z', property: 'name', direction: 'ASC' },
+                    { text: 'Name Z-A', property: 'name', direction: 'DESC' },
+                    { text: 'Price ASC', property: 'price', direction: 'ASC' }
                 ]
             }),
             displayField: 'text',
