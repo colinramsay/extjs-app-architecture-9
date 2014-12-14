@@ -29,7 +29,7 @@ Ext.define('Alcohology.view.product.List', {
         { 
             xtype: 'dataview', itemId: 'productListView', emptyText: 'No Products Found.',
             tpl: '<tpl for="."><div class="product">{name}</div></tpl>',
-            itemSelector: '.product', bind: '{currentProducts}'
+            itemSelector: '.product', bind: '{products}'
         }
     ]
 });

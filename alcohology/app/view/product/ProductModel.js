@@ -3,7 +3,7 @@ Ext.define('Alcohology.view.product.ProductModel', {
     alias: 'viewmodel.product',
     requires: [
         'Alcohology.model.Category',
-        'Alcohology.model.Product'
+        'Alcohology.store.Products'
     ],
     links: {
         currentCategory: {
@@ -11,9 +11,14 @@ Ext.define('Alcohology.view.product.ProductModel', {
             id: 1
         }
     },
-    formulas: {
-        currentProducts: function(get) {
-            return get('currentCategory.products');
+    stores: {
+        products: {
+            type: 'products',
+            remoteFilter: true,
+            filters: [{
+                property: 'categoryId',
+                value: '{currentCategory.id}'
+            }]
         }
     }
 });

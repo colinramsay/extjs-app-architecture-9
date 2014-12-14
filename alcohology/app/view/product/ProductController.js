@@ -17,7 +17,7 @@ Ext.define('Alcohology.view.product.ProductController', {
 
     onSortSelect: function(combo, records) {
         if(records.length > 0) {
-            
+            //records[0].get('field')
         }
     },
 
