@@ -27,7 +27,7 @@ Ext.define('Alcohology.view.product.Detail', {
         }
     },
     items: [
-        { xtype: 'image', src: 'http://www.sencha.com/img/20110215-feat-html5.png' },
+        { tpl: '<img src="/resources/product-images/{imagePath}.jpg" />' },
         { tpl: '<h1>{name}</h1><h2><p class="previousPrice">{price}</p> <p class="previousPrice">{previousPrice}</p></h2>' },
         { tpl: '{features}' },
         { tpl: '{description}' }

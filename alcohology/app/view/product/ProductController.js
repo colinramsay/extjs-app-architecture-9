@@ -17,7 +17,6 @@ Ext.define('Alcohology.view.product.ProductController', {
 
     onSortSelect: function(combo, records) {
         if(records.length > 0) {
-            console.log(records[0]);
             this.getViewModel().set('sortProperty', records[0].get('property'));
             this.getViewModel().set('sortDirection', records[0].get('direction'));
         }
