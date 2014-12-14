@@ -18,6 +18,7 @@ Ext.define('Alcohology.view.product.ProductModel', {
     stores: {
         products: {
             type: 'products',
+            autoLoad: true,
             remoteFilter: true,
             remoteSort: true,
             sorters: [{
