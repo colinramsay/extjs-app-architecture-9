@@ -16,6 +16,15 @@ Ext.define('Alcohology.view.main.MainController', {
                     this.redirectTo('account', true);
                 }
             }
+        },
+
+        controller: {
+            '*': {
+                loginrequired: function() {
+                    Ext.toast('Please login or register.');
+                    this.redirectTo('account', true);
+                }
+            }
         }
     },
 
