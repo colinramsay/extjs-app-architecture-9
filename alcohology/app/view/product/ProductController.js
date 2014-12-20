@@ -24,16 +24,12 @@ Ext.define('Alcohology.view.product.ProductController', {
 
     onCategoryRoute: function(id) {
         this.getViewModel().linkTo('currentCategory', { reference: 'Alcohology.model.Category', id: id });
-        if(this.productWindow) {
-            this.productWindow.close();
-        }
+        this.lookupReference('productWindow').hide();
     },
 
     onProductRoute: function(id) {
         this.getViewModel().linkTo('currentProduct', { reference: 'Alcohology.model.Product', id: id });
-        this.productWindow = Ext.create('Alcohology.view.product.Detail');
-
-        this.productWindow.show();
+        this.lookupReference('productWindow').show();
     },
 
 

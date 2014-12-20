@@ -3,7 +3,8 @@ Ext.define('Alcohology.view.product.List', {
     controller: 'product',
     requires: [
         'Alcohology.view.product.ProductModel',
-        'Alcohology.view.product.ProductController'
+        'Alcohology.view.product.ProductController',
+        'Alcohology.view.product.Detail'
     ],
     xtype: 'product-list',
     cls: 'product-list',
@@ -34,5 +35,14 @@ Ext.define('Alcohology.view.product.List', {
             tpl: '<tpl for="."><div class="product"><h2>{name}</h2><img src="/resources/product-images/{imagePath}-thumb.jpg" /><p>&pound;{price}</p></div></tpl>',
             itemSelector: '.product', bind: '{products}'
         }
-    ]
+    ],
+
+
+    constructor: function() {
+        this.callParent(arguments);
+        
+        this.add(Ext.create('Alcohology.view.product.Detail', {
+            reference: 'productWindow'
+        }));
+    }
 });

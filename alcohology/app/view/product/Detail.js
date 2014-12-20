@@ -1,9 +1,6 @@
 Ext.define('Alcohology.view.product.Detail', {
     extend: 'Ext.Window',
-    viewModel: 'product',
-    controller: 'product',
     modal: true,
-    autoShow: true,
     header: false,
     resizable: false,
     autoScroll: true,
