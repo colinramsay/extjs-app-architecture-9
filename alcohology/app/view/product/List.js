@@ -8,6 +8,7 @@ Ext.define('Alcohology.view.product.List', {
     xtype: 'product-list',
     cls: 'product-list',
     viewModel: 'product',
+    autoScroll: true,
     tbar: [
         {
             xtype: 'combo',
@@ -30,7 +31,7 @@ Ext.define('Alcohology.view.product.List', {
     items: [
         { 
             xtype: 'dataview', itemId: 'productListView', emptyText: 'No Products Found.',
-            tpl: '<tpl for="."><div class="product"><h2>{name}</h2><img src="/resources/product-images/{imagePath}-thumb.jpg" /><p>{price}</p></div></tpl>',
+            tpl: '<tpl for="."><div class="product"><h2>{name}</h2><img src="/resources/product-images/{imagePath}-thumb.jpg" /><p>&pound;{price}</p></div></tpl>',
             itemSelector: '.product', bind: '{products}'
         }
     ]

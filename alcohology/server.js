@@ -16,7 +16,7 @@ db.serialize(function() {
     if(!exists) {
         db.run('CREATE TABLE `Categories` (\
             `id`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,\
-            `name`    TEXT\
+            `name`    TEXT
         );');
 
         db.run('CREATE TABLE `Products` (\
@@ -26,7 +26,8 @@ db.serialize(function() {
             `previousPrice`   TEXT,\
             `description`   TEXT,\
             `features`   TEXT,\
-            `categoryId`  INTEGER\
+            `brewery` TEXT,\
+            `categoryId`  INTEGER
         );');
     }
 });

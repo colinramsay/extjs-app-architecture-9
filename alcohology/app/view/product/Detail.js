@@ -28,7 +28,7 @@ Ext.define('Alcohology.view.product.Detail', {
     },
     items: [
         { tpl: '<img src="/resources/product-images/{imagePath}.jpg" />' },
-        { tpl: '<h1>{name}</h1><h2><p class="previousPrice">{price}</p> <p class="previousPrice">{previousPrice}</p></h2>' },
+        { tpl: '<h1>{name}</h1><h2>{brewery}</h2><h2><p class="previousPrice">{price}</p> <p class="previousPrice">{previousPrice}</p></h2>' },
         { tpl: '{features}' },
         { tpl: '{description}' }
     ],
