@@ -33,7 +33,7 @@ Ext.define('Alcohology.view.product.Detail', {
             },
             items: [
                 { tpl: '<h1>{name}</h1><h2 class="brewery">{brewery}</h2><h2><p class="price">&pound;{price}</p> <p class="previousPrice">Was: &pound;{previousPrice}</p></h2>' },
-                { tpl: '{description}' }
+                { tpl: '<div class="description">{description}</div>' }
             ]
         }
     ],

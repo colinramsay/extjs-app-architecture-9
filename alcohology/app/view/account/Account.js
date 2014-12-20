@@ -16,6 +16,7 @@ Ext.define('Alcohology.view.account.Account', {
     onEsc: Ext.emptyFn,
     width: 800,
     autoHeight: true,
+    frame: true,
     items: [
         {
             xtype: 'container',

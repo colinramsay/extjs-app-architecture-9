@@ -1,4 +1,8 @@
+$base-color: white;
+$color: #000033;
 $font-family: 'Helvetica Neue';
-$base-color: #000033;
-$color: white;
-$panel-base-color: white;
+$panel-body-background-color: $base-color;
+$panel-header-color: $color;
+$window-border-width: 1px;
+$window-border-color: $color;
+$panel-header-padding: 10px 10px;

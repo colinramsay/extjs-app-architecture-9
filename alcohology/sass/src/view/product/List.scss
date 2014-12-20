@@ -1,9 +1,17 @@
+.product-list {
+    
+    .empty {
+        padding: 10px;
+    }
+}
+
 .product {
     float: left;
     width: 225px;
     height: 225px;
     position: relative;
     margin: 10px;
+
 }
 
 .product img {

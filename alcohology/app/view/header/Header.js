@@ -9,7 +9,7 @@ Ext.define('Alcohology.view.header.Header', {
     layout: 'hbox',
     title: 'alcohology.',
     items: [
-        { xtype: 'account-indicator', bind: '{currentUser}' },
-        { xtype: 'minicart', bind: { data: { count: '{cartCount}' } }}
+        { xtype: 'account-indicator', width: 80, bind: '{currentUser}' },
+        { xtype: 'minicart', width: 80, bind: { data: { count: '{cartCount}' } }}
     ]
 });
