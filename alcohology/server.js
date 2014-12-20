@@ -14,12 +14,12 @@ app.use(bodyParser.json());
 
 db.serialize(function() {
     if(!exists) {
-        db.run('CREATE TABLE `Categories` (\
+        db.run("CREATE TABLE `Categories` (\
             `id`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,\
-            `name`    TEXT
-        );');
+            `name`    TEXT\
+        );");
 
-        db.run('CREATE TABLE `Products` (\
+        db.run("CREATE TABLE `Products` (\
             `id`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,\
             `name`    TEXT,\
             `price`   TEXT,\
@@ -27,8 +27,8 @@ db.serialize(function() {
             `description`   TEXT,\
             `features`   TEXT,\
             `brewery` TEXT,\
-            `categoryId`  INTEGER
-        );');
+            `categoryId`  INTEGER\
+        );");
     }
 });
 

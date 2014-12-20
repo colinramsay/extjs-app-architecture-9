@@ -6,31 +6,36 @@ Ext.define('Alcohology.view.product.Detail', {
     autoShow: true,
     header: false,
     resizable: false,
-    defaults: {
-        xtype: 'component',
-        bind: { data: '{currentProduct}' }
-    },
-    width: Ext.getBody().getViewSize().width - 30,
-    height: Ext.getBody().getViewSize().height - 30,
-    layout: {
-        type: 'table',
-        columns: 2,
-        tableAttrs: {
-            style: {
-                width: '100%'
-            }
-        },
-        tdAttrs: {
-            style: {
-                width: '50%', padding: '10px'
-            }
-        }
-    },
+    autoScroll: true,
+    height: 600,
+    width: 800,
+    layout: 'column',
+    cls: 'product-detail',
     items: [
-        { tpl: '<img src="/resources/product-images/{imagePath}.jpg" />' },
-        { tpl: '<h1>{name}</h1><h2>{brewery}</h2><h2><p class="previousPrice">{price}</p> <p class="previousPrice">{previousPrice}</p></h2>' },
-        { tpl: '{features}' },
-        { tpl: '{description}' }
+        {
+            xtype: 'container',
+            columnWidth: 0.5,
+            defaults: {
+                xtype: 'component',
+                bind: { data: '{currentProduct}' }
+            },
+            items: [
+                { xtype: 'container', tpl: '<img src="/resources/product-images/{imagePath}-thumb.jpg" />' },
+                { tpl: '<ul><li>{features}</li></ul>' }
+            ]
+        },
+        {
+            xtype: 'container',
+            columnWidth: 0.5,
+            defaults: {
+                xtype: 'component',
+                bind: { data: '{currentProduct}' }
+            },
+            items: [
+                { tpl: '<h1>{name}</h1><h2 class="brewery">{brewery}</h2><h2><p class="price">&pound;{price}</p> <p class="previousPrice">Was: &pound;{previousPrice}</p></h2>' },
+                { tpl: '{description}' }
+            ]
+        }
     ],
 
     bbar: [

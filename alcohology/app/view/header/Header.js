@@ -7,8 +7,7 @@ Ext.define('Alcohology.view.header.Header', {
     xtype: 'app-header',
     cls: 'app-header',
     layout: 'hbox',
-    title: 'Alcohology',
-    //viewModel: true,
+    title: 'alcohology.',
     items: [
         { xtype: 'account-indicator', bind: '{currentUser}' },
         { xtype: 'minicart', bind: { data: { count: '{cartCount}' } }}
