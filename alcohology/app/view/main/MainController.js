@@ -6,8 +6,14 @@ Ext.define('Alcohology.view.main.MainController', {
         component: {
             'component[cls="mini-cart"]': {
                 click: function() {
-                    this.redirectTo('cart');
-                    this.lookupReference('cartWindow').show();
+                    this.redirectTo('cart', true);
+                }
+            },
+
+
+            'component[cls="account-indicator"]': {
+                click: function() {
+                    this.redirectTo('account', true);
                 }
             }
         }
@@ -15,11 +21,12 @@ Ext.define('Alcohology.view.main.MainController', {
 
 
     routes: {
+        'account': function() {
+            this.lookupReference('accountWindow').show();
+        },
+
         'cart': function() {
-            var win = this.lookupReference('cartWindow');
-            if(win.isHidden()) {
-                win.show();
-            }
+            this.lookupReference('cartWindow').show();
         }
     }
 });

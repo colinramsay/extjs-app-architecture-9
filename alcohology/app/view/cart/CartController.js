@@ -10,4 +10,4 @@ Ext.define('Alcohology.view.cart.CartController', {
             }
         }
     }
-})
+});

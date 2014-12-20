@@ -2,11 +2,17 @@ Ext.define('Alcohology.view.main.MainModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.main',
 
-    requires: ['Alcohology.store.Cart'],
+    requires: ['Alcohology.store.Cart', 'Alcohology.model.Order'],
 
     stores: {
         cart: {
             type: 'cart'
+        },
+        orders: {
+            model: 'Alcohology.model.Order',
+            data: [
+                { date: '2014-10-18', items: [{ name: 'Leffe 750ml', quantity: 6 }] }
+            ]
         }
     },
 
