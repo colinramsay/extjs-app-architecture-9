@@ -1,3 +1,4 @@
+// app/model/CartItem.js
 Ext.define('Alcohology.model.CartItem', {
     extend: 'Alcohology.model.BaseModel',
     fields: [

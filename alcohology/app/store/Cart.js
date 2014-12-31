@@ -1,3 +1,4 @@
+// app/store/Cart.js
 Ext.define('Alcohology.store.Cart', {
     extend: 'Ext.data.Store',
     model: 'Alcohology.model.CartItem',
@@ -21,7 +22,6 @@ Ext.define('Alcohology.store.Cart', {
 
         return item;
     },
-
 
     toOrder: function() {
         var items = [], total = 0;

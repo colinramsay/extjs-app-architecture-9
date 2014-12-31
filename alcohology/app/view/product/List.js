@@ -1,3 +1,4 @@
+// app/view/product/List.js
 Ext.define('Alcohology.view.product.List', {
     extend: 'Ext.Panel',
     controller: 'product',
@@ -9,7 +10,6 @@ Ext.define('Alcohology.view.product.List', {
     xtype: 'product-list',
     cls: 'product-list',
     viewModel: 'product',
-    autoScroll: true,
     tbar: [
         {
             xtype: 'combo',
@@ -31,9 +31,10 @@ Ext.define('Alcohology.view.product.List', {
     ],
     items: [
         { 
-            xtype: 'dataview', itemId: 'productListView', emptyText: '<span class="empty">No Products Found.</span>',
+            xtype: 'dataview', itemId: 'productListView', 
+            emptyText: '<span class="empty">No Products Found.</span>',
+            itemSelector: '.product', bind: '{products}',
             tpl: '<tpl for="."><div class="product"><h2>{name}</h2><img src="/resources/product-images/{imagePath}-thumb.jpg" /><p>&pound;{price}</p></div></tpl>',
-            itemSelector: '.product', bind: '{products}'
         }
     ],
 

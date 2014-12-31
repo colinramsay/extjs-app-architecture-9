@@ -1,13 +1,7 @@
+// app/view/account/Account.js
 Ext.define('Alcohology.view.account.Account', {
     extend: 'Ext.Window',
     xtype: 'account',
-    requires: [
-        'Alcohology.view.account.Login',
-        'Alcohology.view.account.Register',
-        'Alcohology.view.account.AccountController',
-        'Alcohology.view.account.MyDetails',
-        'Alcohology.view.account.PastOrders'
-    ],
     layout: 'fit',
     controller: 'account',
     modal: true,
@@ -33,7 +27,8 @@ Ext.define('Alcohology.view.account.Account', {
             items: [
                 { xtype: 'register', title: 'Register', columnWidth: 0.5 },
                 {
-                    xtype: 'panel',  title: 'Past Orders', columnWidth: 0.5, items: [
+                    xtype: 'panel',  title: 'Past Orders',
+                    columnWidth: 0.5, items: [
                         { xtype: 'pastorders', bind: '{orders}' }
                     ]
                 }
@@ -44,6 +39,9 @@ Ext.define('Alcohology.view.account.Account', {
     bbar: [
         '->',
         { text: 'Close', itemId: 'close' },
-        { text: 'Login/Register', itemId: 'loginRegister', bind: { hidden: '{currentUser}' } }
+        {
+            text: 'Login/Register', itemId: 'loginRegister',
+            bind: { hidden: '{currentUser}' }
+        }
     ]
 });

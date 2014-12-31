@@ -1,3 +1,4 @@
+// app/ux/ClickContainer.js
 Ext.define('Alcohology.ux.ClickContainer', {
     extend: 'Ext.Container',
     xtype: 'clickcontainer',

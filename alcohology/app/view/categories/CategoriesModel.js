@@ -1,3 +1,4 @@
+// app/view/categories/CategoriesModel.js
 Ext.define('Alcohology.view.categories.CategoriesModel', {
     extend: 'Ext.app.ViewModel',
     requires: ['Alcohology.store.Categories'],

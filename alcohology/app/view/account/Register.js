@@ -1,3 +1,4 @@
+// app/view/account/Register.js
 Ext.define('Alcohology.view.account.Register', {
     extend: 'Ext.FormPanel',
     xtype: 'register',

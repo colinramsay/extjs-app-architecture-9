@@ -1,3 +1,4 @@
+// app/view/product/ProductController.js
 Ext.define('Alcohology.view.product.ProductController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.product',
@@ -17,18 +18,23 @@ Ext.define('Alcohology.view.product.ProductController', {
 
     onSortSelect: function(combo, records) {
         if(records.length > 0) {
-            this.getViewModel().set('sortProperty', records[0].get('property'));
-            this.getViewModel().set('sortDirection', records[0].get('direction'));
+            var prop = records[0].get('property'),
+                dir = records[0].get('direction');
+
+            this.getViewModel().set('sortProperty', prop);
+            this.getViewModel().set('sortDirection', dir);
         }
     },
 
     onCategoryRoute: function(id) {
-        this.getViewModel().linkTo('currentCategory', { reference: 'Alcohology.model.Category', id: id });
+        var cfg = { reference: 'Alcohology.model.Category', id: id };
+        this.getViewModel().linkTo('currentCategory', cfg);
         this.lookupReference('productWindow').hide();
     },
 
     onProductRoute: function(id) {
-        this.getViewModel().linkTo('currentProduct', { reference: 'Alcohology.model.Product', id: id });
+        var cfg = { reference: 'Alcohology.model.Product', id: id };
+        this.getViewModel().linkTo('currentProduct',  cfg);
         this.lookupReference('productWindow').show();
     },
 
@@ -39,7 +45,8 @@ Ext.define('Alcohology.view.product.ProductController', {
 
 
     onProductClose: function() {
-        this.redirectTo('category/' + this.getViewModel().get('currentCategory').getId());
+        var id = this.getViewModel().get('currentCategory').getId();
+        this.redirectTo('category/' + id);
     },
 
 

@@ -1,3 +1,4 @@
+// app/view/header/Header.js
 Ext.define('Alcohology.view.header.Header', {
     extend: 'Ext.panel.Header',
     requires: [

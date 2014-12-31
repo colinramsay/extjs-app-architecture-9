@@ -1,41 +1,40 @@
+// app/view/main/MainController.js
 Ext.define('Alcohology.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
 
     listen: {
         component: {
-            'component[cls="mini-cart"]': {
-                click: function() {
-                    this.redirectTo('cart', true);
-                }
-            },
-
-
-            'component[cls="account-indicator"]': {
-                click: function() {
-                    this.redirectTo('account', true);
-                }
-            }
+            'component[cls="mini-cart"]': { click: 'onCartClick' },
+            'component[cls="account-indicator"]': { click: 'onAccountClick' },
         },
 
-        controller: {
-            '*': {
-                loginrequired: function() {
-                    Ext.toast('Please login or register.');
-                    this.redirectTo('account', true);
-                }
-            }
-        }
+        controller: { '*': { loginrequired: 'onLoginRequired' } }
     },
 
-
     routes: {
-        'account': function() {
-            this.lookupReference('accountWindow').show();
-        },
+        'account': 'onAccountRoute',
+        'cart': 'onCartRoute'
+    },
 
-        'cart': function() {
-            this.lookupReference('cartWindow').show();
-        }
+    onLoginRequired: function() {
+        Ext.toast('Please login or register.');
+        this.redirectTo('account', true);
+    },
+
+    onCartClick: function() {
+        this.redirectTo('cart', true);
+    },
+
+    onAccountClick: function() {
+        this.redirectTo('account', true);
+    },
+
+    onAccountRoute: function() {
+        this.lookupReference('accountWindow').show();
+    },
+
+    onCartRoute: function() {
+        this.lookupReference('cartWindow').show();
     }
 });

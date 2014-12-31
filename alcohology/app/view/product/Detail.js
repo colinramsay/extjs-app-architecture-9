@@ -1,3 +1,4 @@
+// app/view/product/Detail.js
 Ext.define('Alcohology.view.product.Detail', {
     extend: 'Ext.Window',
     modal: true,
@@ -17,7 +18,10 @@ Ext.define('Alcohology.view.product.Detail', {
                 bind: { data: '{currentProduct}' }
             },
             items: [
-                { xtype: 'container', tpl: '<img src="/resources/product-images/{imagePath}-thumb.jpg" />' },
+                { 
+                    xtype: 'container', 
+                    tpl: '<img src="/resources/product-images/{imagePath}-thumb.jpg" />' 
+                },
                 { tpl: '<ul><li>{features}</li></ul>' }
             ]
         },
@@ -29,7 +33,11 @@ Ext.define('Alcohology.view.product.Detail', {
                 bind: { data: '{currentProduct}' }
             },
             items: [
-                { tpl: '<h1>{name}</h1><h2 class="brewery">{brewery}</h2><h2><p class="price">&pound;{price}</p> <p class="previousPrice">Was: &pound;{previousPrice}</p></h2>' },
+                { tpl: new Ext.Template('<h1>{name}</h1>',
+                    '<h2 class="brewery">{brewery}</h2>',
+                    '<h2><p class="price">&pound;{price}</p>',
+                    '<p class="previousPrice">Was: &pound;{previousPrice}</p>',
+                    '</h2>') },
                 { tpl: '<div class="description">{description}</div>' }
             ]
         }

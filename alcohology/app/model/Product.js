@@ -1,3 +1,4 @@
+// app/model/Product.js
 Ext.define('Alcohology.model.Product', {
     extend: 'Alcohology.model.BaseModel',
     requires: ['Alcohology.model.Category'],

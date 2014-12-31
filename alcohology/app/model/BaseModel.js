@@ -1,3 +1,4 @@
+// app/model/BaseModel.js
 Ext.define('Alcohology.model.BaseModel', {
     extend: 'Ext.data.Model',
 

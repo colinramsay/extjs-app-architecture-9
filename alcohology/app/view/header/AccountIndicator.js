@@ -1,3 +1,4 @@
+// app/view/header/AccountIndicator.js
 Ext.define('Alcohology.view.header.AccountIndicator', {
     extend: 'Alcohology.ux.ClickContainer',
     xtype: 'account-indicator',

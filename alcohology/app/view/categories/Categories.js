@@ -1,3 +1,4 @@
+// app/view/categories/Categories.js
 Ext.define('Alcohology.view.categories.Categories', {
     extend: 'Ext.grid.Panel',
     xtype: 'categories',
@@ -11,7 +12,6 @@ Ext.define('Alcohology.view.categories.Categories', {
     bind: {
         store: '{categories}'
     },
-    autoScroll: true,
     hideHeaders: true,
     viewConfig: {
         trackOver: false

@@ -1,3 +1,4 @@
+// app/view/cart/CartController.js
 Ext.define('Alcohology.view.cart.CartController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.cart',
@@ -8,11 +9,9 @@ Ext.define('Alcohology.view.cart.CartController', {
         }
     },
 
-
     onCartClose: function() {
         this.getView().hide();
     },
-
 
     onOrderNow: function() {
         var vm = this.getViewModel();
@@ -20,7 +19,6 @@ Ext.define('Alcohology.view.cart.CartController', {
         if(!vm.get('currentUser')) {
             this.fireEvent('loginrequired');
         } else {
-            var product = vm.get('currentProduct');
             var order = vm.get('cart').toOrder();
 
             vm.get('cart').removeAll();

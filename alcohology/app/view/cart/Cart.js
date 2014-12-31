@@ -1,3 +1,4 @@
+// app/view/cart/Cart.js
 Ext.define('Alcohology.view.cart.Cart', {
     extend: 'Ext.Window',
     requires: ['Alcohology.view.cart.CartController'],

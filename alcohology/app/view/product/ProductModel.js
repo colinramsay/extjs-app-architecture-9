@@ -1,3 +1,4 @@
+// app/view/product/ProductModel.js
 Ext.define('Alcohology.view.product.ProductModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.product',

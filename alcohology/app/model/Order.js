@@ -1,3 +1,4 @@
+// app/model/Order.js
 Ext.define('Alcohology.model.Order', {
     extend: 'Alcohology.model.BaseModel',
     fields: [

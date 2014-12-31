@@ -1,3 +1,4 @@
+// app/view/account/AccountController.js
 Ext.define('Alcohology.view.account.AccountController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.account',
@@ -8,11 +9,9 @@ Ext.define('Alcohology.view.account.AccountController', {
         }
     },
 
-
     onAccountClose: function(btn) {
         this.getView().hide();
     },
-
 
     onLoginRegister: function() {
         this.getViewModel().set('currentUser', {
