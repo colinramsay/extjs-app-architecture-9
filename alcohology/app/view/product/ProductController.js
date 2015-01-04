@@ -8,6 +8,16 @@ Ext.define('Alcohology.view.product.ProductController', {
             '#close': { 'click': 'onProductClose' },
             '#addToCart': { 'click': 'onAddToCart' },
             'combo': { 'select': 'onSortSelect' }
+        },
+        store: {
+            'products': {
+                'beforeload': function() {
+                    this.lookupReference('list').mask('Loading...');
+                },
+                'load': function() {
+                    this.lookupReference('list').mask(false);
+                }
+            }
         }
     },
 
@@ -15,6 +25,7 @@ Ext.define('Alcohology.view.product.ProductController', {
         'product/:id': 'onProductRoute',
         'category/:id': 'onCategoryRoute'
     },
+
 
     onSortSelect: function(combo, records) {
         if(records.length > 0) {

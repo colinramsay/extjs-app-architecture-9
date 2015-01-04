@@ -31,7 +31,8 @@ Ext.define('Alcohology.view.product.List', {
     ],
     items: [
         { 
-            xtype: 'dataview', itemId: 'productListView', 
+            xtype: 'dataview', itemId: 'productListView',
+            reference: 'list',
             emptyText: '<span class="empty">No Products Found.</span>',
             itemSelector: '.product', bind: '{products}',
             tpl: '<tpl for="."><div class="product"><h2>{name}</h2><img src="/resources/product-images/{imagePath}-thumb.jpg" /><p>&pound;{price}</p></div></tpl>'

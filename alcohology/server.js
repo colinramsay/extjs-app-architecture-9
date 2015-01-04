@@ -56,7 +56,8 @@ app.get('/category', function(req, res) {
     });
 });
 
-app.get('/product', function(req, res) {
+var productListHandler = function(req, res) {
+    
     var filters = JSON.parse(req.query.filter),
         sort = JSON.parse(req.query.sort)[0],
         categoryId = getFilterValue(filters, 'categoryId');
@@ -77,7 +78,9 @@ app.get('/product', function(req, res) {
         }
         res.json(data);
     });
-});
+};
+
+app.get('/product', function(req, res) { setTimeout(function() { productListHandler(req, res); }, 3000) });
 
 app.get('/product/:id', function(req, res) {
     
