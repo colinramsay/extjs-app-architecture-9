@@ -6,7 +6,7 @@ Ext.define('Alcohology.view.main.MainController', {
     listen: {
         component: {
             'component[cls="mini-cart"]': { click: 'onCartClick' },
-            'component[cls="account-indicator"]': { click: 'onAccountClick' },
+            'component[cls="account-indicator"]': { click: 'onAccountClick' }
         },
 
         controller: { '*': { loginrequired: 'onLoginRequired' } }
