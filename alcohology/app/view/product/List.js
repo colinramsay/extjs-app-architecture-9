@@ -43,6 +43,13 @@ Ext.define('Alcohology.view.product.List', {
     constructor: function() {
         this.callParent(arguments);
         
+        this.addDocked({
+            dock: 'bottom',
+            xtype: 'pagingtoolbar',
+            store: this.getViewModel().get('products'),
+            displayInfo: true
+        });
+
         this.add(Ext.create('Alcohology.view.product.Detail', {
             reference: 'productWindow'
         }));

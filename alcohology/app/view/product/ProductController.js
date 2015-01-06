@@ -21,6 +21,7 @@ Ext.define('Alcohology.view.product.ProductController', {
         }
     },
 
+
     routes : {
         'product/:id': 'onProductRoute',
         'category/:id': 'onCategoryRoute'

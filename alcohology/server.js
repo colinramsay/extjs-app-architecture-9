@@ -68,16 +68,24 @@ var productListHandler = function(req, res) {
 
     var dir = sort.direction === 'ASC' ? 'ASC' : 'DESC';
 
-    var query = 'SELECT * FROM Products WHERE CategoryId = $categoryId ORDER BY ' + sort.property + ' ' + dir;
+    var query = 'SELECT * FROM Products WHERE CategoryId = $categoryId ORDER BY ' + sort.property + ' ' + dir + '  LIMIT ' +req.query.start+ ', ' +req.query.limit+ '';
 
     console.log(query, categoryId);
 
-    db.all(query, { $categoryId: categoryId }, function(err, data) {
-        if(err) {
-            console.log(err);
-        }
-        res.json(data);
+    db.get('SELECT COUNT(*) as count FROM Products', function(err, count) {
+        db.all(query, { $categoryId: categoryId }, function(err, data) {
+            if(err) {
+                console.log(err);
+            }
+            res.json({
+                success: true,
+                total: count.count,
+                data: data
+            });
+        });
     });
+
+    
 };
 
 app.get('/product', function(req, res) { setTimeout(function() { productListHandler(req, res); }, 3000) });
