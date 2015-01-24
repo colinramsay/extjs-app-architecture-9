@@ -5,6 +5,10 @@ Ext.define('Alcohology.store.Cart', {
     alias: 'store.cart',
 
     addProduct: function(product) {
+        if(product.$className !== 'Alcohology.model.Product') {
+            throw 'argument `product` must be an instance of Alcohology.model.Product.';
+        }
+
         // find a product with a matching ID
         var item = this.findRecord('productId', product.getId());
 
